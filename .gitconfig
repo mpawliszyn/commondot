@@ -1,0 +1,42 @@
+[color]
+    branch = auto
+    interactive = auto
+    status = auto
+    diff = auto
+    ui = true
+[user]
+    name = Michael Pawliszyn
+    email = mpawliszyn@gmail.com
+[core]
+    editor = vim
+    pager = less -RX
+    excludesfile = /home/mpawlis/.gitignore
+[alias]
+    lg = !git --no-pager log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -20
+    lgall = !git --no-pager log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all -20
+    lglong = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all --full-history
+    lgreviewboard = log --pretty=format:'commit: %H%n%n%s%n%n%b'
+    graph = log --branches --pretty=short --decorate --graph
+    history = log --graph --pretty=format:'%Cred%h%Creset - %s %C(bold blue)<%an>%Creset %Cgreen(%cr) %C(yellow)%d%Creset' --abbrev-commit --date=relative
+    branches = branch --list --color=auto --all -vv
+    remotes = remote -v show
+    delta = diff @{u} HEAD
+    diffc = !sh -c 'git diff $1^ $1'
+    logc = !sh -c 'git log --name-status -1'
+    files = !sh -c 'git diff -M -C --name-status $1^ $1'
+    ci = commit -v
+    checkoutt = checkout -tb
+    dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+[branch]
+    autosetuprebase = always
+[branch "*branch-name*"]
+    rebase = true
+[mergetool]
+    keepBackup = false
+[push]
+    default = upstream
+[rerere]
+    enabled = true
+    autoupdate = true
+[rebase]
+    autosquash = true
