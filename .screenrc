@@ -1,0 +1,23 @@
+# no annoying audible bell, please
+vbell on
+
+# skip splash screen
+startup_message off
+
+bindkey -d ^? stuff ^H
+bindkey -d ^@ stuff ^H
+# detach on hangup
+autodetach on
+
+defscrollback 30000
+
+hardstatus alwayslastline
+hardstatus string "%{= kW}%-w%{..B}%{+b}%50>*%n%f %t%*%{= kW}%+w%< %=%{..G} %H %{..R} %m/%d %C%a "
+
+bindkey -k F1 prev
+bindkey -k F2 next
+bindkey -k kb stuff ^H
+bind ' ' windowlist -b
+
+# Default screens
+term xtermc
