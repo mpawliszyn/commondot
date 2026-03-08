@@ -1,0 +1,43 @@
+# commondot -- shell/zshrc
+# Symlinked to ~/.zshrc
+
+# --- Oh My Zsh ---
+export ZSH="$HOME/.oh-my-zsh"
+# Theme disabled -- using Starship (see end of file)
+COMPLETION_WAITING_DOTS="true"
+HIST_STAMPS="yyyy-mm-dd"
+zstyle ':omz:update' mode auto
+plugins=(git z docker aws)
+source $ZSH/oh-my-zsh.sh
+
+# --- Environment ---
+export LANG=en_US.UTF-8
+export EDITOR=nvim
+export PAGER=less
+export LESS="${LESS:--}FSRX"
+
+# --- Completion ---
+zstyle ':completion:*' completer _expand _complete _approximate
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' menu select
+
+# --- Aliases ---
+alias ll='ls -lh'
+alias grep='grep --color=auto'
+
+# --- Topgrade nag ---
+last=$(stat -f "%m" /opt/homebrew/var/homebrew/locks/update 2>/dev/null || echo 0)
+days=$(( ($(date +%s) - last) / 86400 ))
+if [ $days -gt 7 ]; then
+  echo "It's been $days days since brew was updated -- run topgrade"
+fi
+
+# --- Private overrides ---
+[[ -f ~/Development/commondot/private/zshrc ]] && source ~/Development/commondot/private/zshrc
+
+# --- Plugins (must be near end) ---
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# --- Starship (must be last) ---
+eval "$(starship init zsh)"
