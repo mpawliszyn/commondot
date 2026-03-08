@@ -1,0 +1,16 @@
+# Patterns that should never appear in committed files
+# Used by pre-commit hook to scan staged content
+# Case-insensitive grep — one pattern per line
+
+# AWS
+aws_access_key_id
+aws_secret_access_key
+
+# SSH private keys
+BEGIN.*PRIVATE KEY
+
+# Common secrets
+password\s*=
+secret\s*=
+token\s*=
+api_key\s*=
