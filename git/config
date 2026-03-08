@@ -1,0 +1,47 @@
+[user]
+    name = Michael Pawliszyn
+    email = mpawliszyn@gmail.com
+
+[init]
+    defaultBranch = main
+
+[core]
+    editor = nvim
+    pager = less -RX
+
+[branch]
+    autosetuprebase = always
+
+[pull]
+    rebase = true
+
+[push]
+    default = current
+
+[fetch]
+    prune = true
+
+[diff]
+    algorithm = histogram
+
+[merge]
+    conflictStyle = zdiff3
+
+[rebase]
+    autosquash = true
+
+[rerere]
+    enabled = true
+    autoupdate = true
+
+[mergetool]
+    keepBackup = false
+
+[alias]
+    lg = !git --no-pager log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -20
+    lgall = !git --no-pager log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all -20
+    branches = branch --list --color=auto --all -vv
+    remotes = remote -v show
+    delta = diff @{u} HEAD
+    ci = commit -v
+    nb = "!f() { main=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'); git checkout -b \"mikepaw.$1\" --track \"origin/$main\"; }; f"
