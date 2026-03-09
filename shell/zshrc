@@ -20,7 +20,7 @@ alias ll='ls -lh'
 alias grep='grep --color=auto'
 
 # --- Topgrade nag ---
-last=$(stat -f "%m" /opt/homebrew/var/homebrew/locks/update 2>/dev/null || echo 0)
+last=$(git -C "$(brew --repository)" log -1 --format="%ct" 2>/dev/null || echo 0)
 days=$(( ($(date +%s) - last) / 86400 ))
 if [ $days -gt 7 ]; then
   echo "It's been $days days since brew was updated -- run topgrade"

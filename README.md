@@ -13,7 +13,7 @@ of one developer environment:
 ## Repository structure
 
 ```
-shell/              Zsh, Starship, Topgrade configs
+shell/              Zsh (zshrc, zshenv), Starship, Topgrade configs
 git/                Git config and global gitignore (XDG)
 ssh/                SSH config + 1Password setup docs
 editor/             Neovim config (XDG)
