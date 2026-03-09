@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Global prepare-commit-msg hook
+# Calls aittributor to append AI agent attribution when an agent is active.
+
+if command -v aittributor &>/dev/null; then
+    aittributor "$1"
+fi

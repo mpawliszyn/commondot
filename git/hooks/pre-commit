@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Global pre-commit hook
+# Delegates to repo-local .pre-commit-hook.sh if present.
+
+REPO=$(git rev-parse --show-toplevel)
+if [[ -f "$REPO/.pre-commit-hook.sh" ]]; then
+    exec "$REPO/.pre-commit-hook.sh"
+fi

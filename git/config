@@ -8,6 +8,7 @@
 [core]
     editor = nvim
     pager = less -RX
+    hooksPath = ~/Development/commondot/git/hooks
 
 [branch]
     autosetuprebase = always
