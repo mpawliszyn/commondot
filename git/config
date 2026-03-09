@@ -29,6 +29,7 @@
 
 [rebase]
     autosquash = true
+    autoStash = true
 
 [rerere]
     enabled = true

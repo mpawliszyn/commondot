@@ -1,6 +1,10 @@
-[misc]
 # commondot -- shell/topgrade.toml
 # Symlinked to ~/.config/topgrade.toml
+
+[misc]
+
+[git]
+disable_git_updating = true
 
 [commands]
 "Commondot Sync" = "git -C ~/Development/commondot pull --rebase --autostash"
