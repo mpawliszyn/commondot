@@ -27,7 +27,8 @@ fi
 regex=$(IFS='|'; echo "${patterns[*]}")
 
 # Scan only added lines in staged changes (skip removed lines and diff headers)
-matches=$(git diff --cached --diff-filter=ACM -U0 | grep '^+' | grep -v '^+++' | grep -iE "$regex" || true)
+# Exclude .private-patterns itself -- changes to the blocklist are not secrets
+matches=$(git diff --cached --diff-filter=ACM -U0 -- . ':!.private-patterns' | grep '^+' | grep -v '^+++' | grep -iE "$regex" || true)
 
 if [[ -n "$matches" ]]; then
     echo "Pre-commit hook: potential private content detected!"

@@ -1,0 +1,19 @@
+# commondot -- shell/zshenv
+# Symlinked to ~/.zshenv
+# Sourced for ALL zsh invocations (interactive, non-interactive, login, scripts).
+# Environment variables and PATH go here, not in zshrc.
+
+# --- PATH ---
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# --- Environment ---
+export LANG=en_US.UTF-8
+export EDITOR=nvim
+export PAGER=less
+export LESS="${LESS:--}FSRX"
+
+# --- zsh-syntax-highlighting ---
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
+
+# --- Private overrides ---
+[[ -f ~/Development/commondot/private/zshenv ]] && source ~/Development/commondot/private/zshenv

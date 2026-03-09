@@ -10,12 +10,6 @@ zstyle ':omz:update' mode auto
 plugins=(git z docker aws)
 source $ZSH/oh-my-zsh.sh
 
-# --- Environment ---
-export LANG=en_US.UTF-8
-export EDITOR=nvim
-export PAGER=less
-export LESS="${LESS:--}FSRX"
-
 # --- Completion ---
 zstyle ':completion:*' completer _expand _complete _approximate
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'

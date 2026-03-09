@@ -12,5 +12,10 @@ BEGIN.*PRIVATE KEY
 # Common secrets
 password\s*=
 secret\s*=
+_secret_key\s*=
 token\s*=
 api_key\s*=
+
+# Stripe key values
+sk_live_
+sk_test_
