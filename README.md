@@ -17,6 +17,7 @@ shell/              Zsh (zshrc, zshenv), Starship, Topgrade configs
 git/                Git config and global gitignore (XDG)
 ssh/                SSH config + 1Password setup docs
 editor/             Neovim config (XDG)
+terminal/           Ghostty config and custom theme (XDG)
 agents/             Tool-agnostic AI agent profile
 archive/            Old files kept for reference (temporary)
 private/            Gitignored employer-specific overrides

@@ -1,0 +1,32 @@
+# Penguin Pop -- custom Ghostty theme for commondot
+# Dark background with saturated, true-rainbow colors.
+# Evolved through V1-V4: TokyoNight warmth, Vibrant Ink energy, correct hues.
+
+# Normal colors
+palette = 0=#4d4d51
+palette = 1=#ff4040
+palette = 2=#50e830
+palette = 3=#f8c620
+palette = 4=#3366ff
+palette = 5=#b050ee
+palette = 6=#30d0e8
+palette = 7=#e1e4ef
+
+# Bright colors
+palette = 8=#4a4d5b
+palette = 9=#ff6060
+palette = 10=#70ff50
+palette = 11=#ffed2e
+palette = 12=#5080ff
+palette = 13=#d06fff
+palette = 14=#50eeff
+palette = 15=#e7e9ef
+
+background = #070709
+foreground = #eceffa
+
+cursor-color = #f4f6fc
+cursor-text = #070709
+
+selection-background = #1e3a6e
+selection-foreground = #eceffa

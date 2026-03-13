@@ -32,6 +32,10 @@ set cmdheight=2
 set incsearch
 set hlsearch
 
-" Move vertically by visual line
+" Move vertically by visual line (normal mode)
 nnoremap j gj
 nnoremap k gk
+
+" Move by visual line in insert mode too (arrow keys)
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk
