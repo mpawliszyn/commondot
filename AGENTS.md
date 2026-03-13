@@ -27,6 +27,16 @@
 - Never use `--no-verify`
 - Never force-push to main
 
+## Attribution
+
+AI agents must have correct attribution configured before making commits.
+Each tool manages its own attribution — there is no global hook.
+
+**On first session:** Verify your tool's attribution settings are active.
+For Claude Code, check that `attribution` is configured in settings
+(`/config` or `~/.claude/settings.json`). The default includes
+`Co-Authored-By` and is correct — just confirm it hasn't been disabled.
+
 ## Bootstrap phase 2 protocol
 
 When setting up a new machine after bootstrap.sh:
